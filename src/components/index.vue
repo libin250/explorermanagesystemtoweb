@@ -1,9 +1,9 @@
 <template>
     <div class="index">
       <el-container>
-        <el-header>Header</el-header>
+        <el-header height="100px">Header</el-header>
         <el-container>
-          <el-aside width="200px">Aside</el-aside>
+          <el-aside width="300px">Aside</el-aside>
           <el-container>
             <el-main>Main</el-main>
             <el-footer>Footer</el-footer>
@@ -23,8 +23,6 @@
   .index {
   }
   .el-header{
-    height: 50px;
-    width: 100%;
     background: rgb(1, 165, 167);
   }
   .el-footer {
