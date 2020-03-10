@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/user/Login'
 import index from '@/components/index'
-import SaveUser from '@/components/user/SaveUser'
+import User from '@/components/user/User'
 
 Vue.use(Router);
 
@@ -19,9 +19,9 @@ export default new Router({
       component: Login
     },
     {
-      path: '/SaveUser',
-      name: 'SaveUser',
-      component: SaveUser
+      path: '/User',
+      name: 'User',
+      component: User
     }
   ]
 })

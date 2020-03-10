@@ -57,7 +57,7 @@
             userName: userName,
             passWord: passWord
           }, res => {
-            if(res.data.code === 200) {
+            if(res.data.data=="登陆成功") {
               this.$router.replace("/")
             } else {
               alert("用户名或密码错误")

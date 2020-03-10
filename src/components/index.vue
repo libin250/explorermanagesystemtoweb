@@ -3,20 +3,21 @@
 
     <el-container>
       <!-- 顶部-->
-      <el-header height="100px">
-        <div class="itop_left">
-          <h1 class="itop_left_h1">云南民大应院宿舍资源管理系统</h1>
-        </div>
-        <div class="itop_right">
-          <div class="itop_right_1">
-            <h4><a href="" target="rightFrame">修改密码&nbsp||</a></h4>
+      <el-header height="70px">
+        <div class="itop">
+          <div class="itop_left">
+            <h1 class="itop_left_h1">云南民大应院宿舍资源管理系统</h1>
           </div>
-          <div class="itop_right_1">
-            <h4><a href="" target="_parent">&nbsp切换用户</a></h4>
-          </div>
-          <div class="itop_right_2">
-            <h3>欢迎您&nbsp</h3>
-            <input type="hidden" value="${sessionScope.user.username}"/>
+          <div class="itop_right">
+            <div class="itop_right_1">
+              <h4><a href="" target="rightFrame">修改密码&nbsp||</a></h4>
+            </div>
+            <div class="itop_right_1">
+              <h4><a href="" target="_parent">&nbsp切换用户</a></h4>
+            </div>
+            <div class="itop_right_2">
+              <h3>欢迎您&nbsp{{session}}</h3>
+            </div>
           </div>
         </div>
       </el-header>
@@ -24,7 +25,9 @@
 
       <el-container>
         <!-- 左边-->
-        <el-aside width="300px">Aside</el-aside>
+        <el-aside width="300px">
+         <el-button class="el-button" @click="hello">hello</el-button>
+         </el-aside>
 
         <el-container>
           <!--右边-->
@@ -40,12 +43,33 @@
 
 <script>
   export default {
-    name: "index"
+    name: "index",
+
+    data() {
+      return{
+        session:"",
+        user:{
+          userName:''
+        }
+      }
+    },
+    mounted() {  //  加载时候的方法
+    },
+    methods:{//触发执行
+      hello(){
+        this.session="hello"
+      }
+
+    }
+
+
   }
 </script>
 
 <style lang="less" scoped>
   .index {
+    padding: 0;
+    margin: 0;
   }
 
   .el-header {
@@ -90,14 +114,13 @@
     height: 70px;
     width: 100%;
     background: rgb(1, 165, 167);
+    text-align: center;
   }
 
   .itop_left {
     float: left;
     width: 350px;
     height: 70px;
-    margin-top: 8px;
-    margin-left: 1px;
   }
 
   .itop_left_h1 {
@@ -107,9 +130,9 @@
     line-height: 50px;
     text-align: center;
     color: #fff;
-    font-family: "Cambria Math";
     font-weight: bold;
     font-size: 24px;
+    margin-top: 10px;
   }
 
   .itop_right {
@@ -133,15 +156,17 @@
     float: left;
     width: 80px;
     height: 50px;
-    margin-top: 25px;
+    margin-top: 10px;
   }
 
   .itop_right_2 {
     float: left;
-    width: 190px;
+    width: 180px;
     height: 50px;
-    margin-top: 22px;
+    margin-top: 10px;
+    margin-left: 10px;
     color: #1a5779;
+    text-align: left;
   }
 
 
